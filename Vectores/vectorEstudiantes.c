@@ -42,7 +42,7 @@ int estudiantes_eliminar(VectorEstudiantes* v, int legajo) {
     int i, j;
     for (i = 0; i < v->tamanio; i++) {
         if (v->data[i].legajo == legajo) {
-            // desplazar todos los elementos posteriores hacia atrás
+            // desplazar todos los elementos anteriores hacia atrás
             for (j = i; j < v->tamanio - 1; j++) {
                 v->data[j] = v->data[j + 1];
             }

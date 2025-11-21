@@ -4,14 +4,25 @@
 //a una materia.
 typedef struct {
     NodoCorrelativa* head;
+    int tamanio;
 } ListaCorrelativas;
 
-// Funciones de la lista
+// Inicia la lista vacia
 void lista_inicializar(ListaCorrelativas* lista);
+
+//Agrega un NodoCorrelativa al comienzo de la lista
 void lista_agregar(ListaCorrelativas* lista, int idMateria);
+
+//Elimina el nodo con el idMateria solicitado de la lista reemplazandolo con el previo
+//(o con el siguiente en caso que sea head).
 int lista_eliminar(ListaCorrelativas* lista, int idMateria);
-int lista_buscar(ListaCorrelativas* lista, int idMateria);
-void lista_liberar(ListaCorrelativas* lista);
+
+//Libera de la memoria a todos los nodos de la lista.
+void lista_clear(ListaCorrelativas* lista);
+
 //Devuelve el id de la materia que se encuentra en el indice.
-//Util para buscar todas las correlativas de una materia
 int lista_obtener(ListaCorrelativas* lista, int indice);
+
+//Devuelve un vector con todos los ids de las materias correlativas.
+//Utiliza tamanio para saber cuanta memoria asignar al vector.
+int* lista_ids(ListaCorrelativas* lista);

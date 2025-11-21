@@ -2,7 +2,7 @@
 #include <string.h>
 
 //El legajo es valido solo si tiene 6 digitos
-static int legajo_valido(int legajo) {
+int legajo_valido(int legajo) {
     return (legajo >= 100000 && legajo <= 999999);
 }
 
@@ -25,7 +25,7 @@ int estudiante_modificar(Estudiante* e, const Estudiante* nuevo) {
     return 1;
 }
 
-int estudiante_es_valido(const Estudiante* e) {
+int estudiante_es_valido(Estudiante* e) {
     if (!e) return 0;
     if (!legajo_valido(e->legajo)) return 0;
     if (e->edad <= 0 || e->edad > 100) return 0;

@@ -12,7 +12,7 @@ int estudiante_init(Estudiante* e, int legajo, const char* nombre, const char* a
 int estudiante_modificar(Estudiante* e, const Estudiante* nuevo);
 
 /* Valida datos: 1 = válido, 0 = inválido */
-int estudiante_es_valido(const Estudiante* e);
+int estudiante_es_valido(Estudiante* e);
 
 // Setters: set_legajo devuelve 1 si válido (debe tener 6 digitos)
 int estudiante_set_legajo(Estudiante* e, int legajo);
